@@ -1,4 +1,3 @@
-import { Routes, Route, Navigate } from "react-router-dom";
 import { ProfileSubheader } from "@/components/ProfileSubheader";
 import { PersonalInfo } from "@/components/profile/PersonalInfo";
 import { Contacts } from "@/components/profile/Contacts";
@@ -57,15 +56,30 @@ const Profile = () => {
       <ProfileHero />
       <ProfileSubheader />
       <div className="bg-card">
-        <Routes>
-          <Route path="/" element={<Navigate to="/profile/personal" replace />} />
-          <Route path="/personal" element={<PersonalInfo />} />
-          <Route path="/contact" element={<Contacts />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/awards" element={<Achievements />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/certifications" element={<Certifications />} />
-        </Routes>
+        {/* All sections displayed continuously with IDs for anchor linking */}
+        <section id="personal">
+          <PersonalInfo />
+        </section>
+        
+        <section id="contact">
+          <Contacts />
+        </section>
+        
+        <section id="education">
+          <Education />
+        </section>
+        
+        <section id="awards">
+          <Achievements />
+        </section>
+        
+        <section id="experience">
+          <Experience />
+        </section>
+        
+        <section id="certifications">
+          <Certifications />
+        </section>
       </div>
     </div>
   );

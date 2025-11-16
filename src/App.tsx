@@ -21,8 +21,8 @@ const App = () => (
           <Sidebar />
           <main className="flex-1 ml-64 transition-all duration-300">
             <Routes>
-              <Route path="/profile/*" element={<Profile />} />
               <Route path="/" element={<Profile />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/journal" element={<Journal />} />
               <Route path="*" element={<NotFound />} />

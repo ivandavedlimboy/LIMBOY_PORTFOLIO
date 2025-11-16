@@ -8,7 +8,7 @@ export const Sidebar = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: "/", label: "Profile", icon: User },
+    { path: "/profile", label: "Profile", icon: User },
     { path: "/gallery", label: "Gallery", icon: Image },
     { path: "/journal", label: "Journal", icon: BookOpen },
   ];

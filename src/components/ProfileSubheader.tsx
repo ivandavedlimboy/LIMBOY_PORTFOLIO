@@ -1,28 +1,66 @@
-import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 const tabs = [
-  { id: "personal", label: "Personal Info", path: "/profile/personal" },
-  { id: "contact", label: "Contact Me", path: "/profile/contact" },
-  { id: "education", label: "Education", path: "/profile/education" },
-  { id: "awards", label: "Awards", path: "/profile/awards" },
-  { id: "experience", label: "Experience", path: "/profile/experience" },
-  { id: "certifications", label: "Certifications", path: "/profile/certifications" },
+  { id: "personal", label: "Personal Info" },
+  { id: "contact", label: "Contact Me" },
+  { id: "education", label: "Education" },
+  { id: "awards", label: "Awards" },
+  { id: "experience", label: "Experience" },
+  { id: "certifications", label: "Certifications" },
 ];
 
 export const ProfileSubheader = () => {
-  const location = useLocation();
+  const [activeTab, setActiveTab] = useState("personal");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = tabs.map(tab => ({
+        id: tab.id,
+        element: document.getElementById(tab.id),
+      }));
+
+      // Find which section is currently in view
+      for (const section of sections) {
+        if (section.element) {
+          const rect = section.element.getBoundingClientRect();
+          // Check if section is in the upper half of viewport
+          if (rect.top <= 200 && rect.bottom >= 200) {
+            setActiveTab(section.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80; // Account for subheader height
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
-    <div className="bg-background border-b border-border">
+    <div className="sticky top-0 z-40 bg-background border-b border-border">
       <div className="flex items-end overflow-x-auto scrollbar-hide">
         {tabs.map((tab, index) => {
-          const isActive = location.pathname === tab.path;
+          const isActive = activeTab === tab.id;
 
           return (
-            <Link
+            <button
               key={tab.id}
-              to={tab.path}
+              onClick={() => scrollToSection(tab.id)}
               className={cn(
                 "relative px-6 py-3 text-sm font-medium whitespace-nowrap transition-all duration-200",
                 "border-r border-border",
@@ -39,7 +77,7 @@ export const ProfileSubheader = () => {
               }}
             >
               {tab.label}
-            </Link>
+            </button>
           );
         })}
       </div>
