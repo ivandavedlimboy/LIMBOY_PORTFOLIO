@@ -29,11 +29,10 @@ export const Sidebar = ({ collapsed, setCollapsed }: SidebarProps) => {
       <aside
         className={cn(
           "fixed left-0 top-0 h-screen bg-sidebar border-r border-sidebar-border transition-all duration-300 z-50 flex flex-col",
-          // Desktop behavior
+          // Desktop behavior - always fixed
           "hidden md:flex",
           collapsed ? "md:w-16" : "md:w-64",
           // Mobile behavior - full overlay
-          "md:relative",
           !collapsed && "flex w-64"
         )}
       >

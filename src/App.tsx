@@ -23,7 +23,7 @@ const App = () => {
         <BrowserRouter>
           <div className="flex min-h-screen w-full bg-background">
             <Sidebar collapsed={sidebarCollapsed} setCollapsed={setSidebarCollapsed} />
-            <main className={`flex-1 transition-all duration-300 md:ml-16 ${sidebarCollapsed ? 'md:ml-16' : 'md:ml-64'}`}>
+            <main className={`flex-1 transition-all duration-300 ${sidebarCollapsed ? 'md:ml-16' : 'md:ml-64'}`}>
               <Routes>
                 <Route path="/" element={<Profile />} />
                 <Route path="/profile" element={<Profile />} />
