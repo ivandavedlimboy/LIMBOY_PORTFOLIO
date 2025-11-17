@@ -33,7 +33,7 @@ export const Education = () => {
 
   return (
     <div className="animate-fade-in p-4 sm:p-6 lg:p-8">
-      <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
+      <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
         {/* Education Timeline */}
         <div className="bg-card rounded-lg p-4 sm:p-6 shadow-sm border border-border">
           <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Education</h2>
