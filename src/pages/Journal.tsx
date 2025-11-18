@@ -1,4 +1,3 @@
-import { BookOpen } from "lucide-react";
 import { useState } from "react";
 
 interface JournalEntry {
@@ -140,18 +139,17 @@ const Journal = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header - Always Centered */}
-      <div className="bg-gradient-to-br from-portfolio-warm-light to-card py-12 px-6">
+      <div className="bg-gradient-to-br from-portfolio-warm-light to-card py-6 px-6">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          <BookOpen className="w-16 h-16 text-accent mx-auto mb-4" />
-          <h1 className="text-5xl font-bold text-foreground mb-4">Journal</h1>
-          <p className="text-xl text-muted-foreground italic">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">Journal</h1>
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground italic">
             Thoughts, Learnings, and Reflections
           </p>
         </div>
       </div>
 
       {/* Main Content Area */}
-      <div className="flex flex-col md:flex-row h-[calc(100vh-280px)] overflow-hidden gap-4 px-4">
+      <div className="flex flex-col md:flex-row h-[calc(100vh-200px)] overflow-hidden gap-4 px-4 pb-4">
         {/* Journal List */}
         <div
           className={`
