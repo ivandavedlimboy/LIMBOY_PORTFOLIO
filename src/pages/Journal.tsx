@@ -149,7 +149,7 @@ const Journal = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex flex-col md:flex-row h-[calc(100vh-200px)] overflow-hidden gap-4 px-4 pb-4">
+      <div className="flex flex-col md:flex-row h-[calc(100vh-200px)] overflow-hidden gap-4 px-4 pb-1">
         {/* Journal List */}
         <div
           className={`
