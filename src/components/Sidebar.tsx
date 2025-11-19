@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
-import { ChevronLeft, ChevronRight, User, Image, BookOpen, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, User, Image, BookOpen, X, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 interface SidebarProps {
   collapsed: boolean;
@@ -9,6 +10,20 @@ interface SidebarProps {
 
 export const Sidebar = ({ collapsed, setCollapsed }: SidebarProps) => {
   const location = useLocation();
+  const [isDark, setIsDark] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    return saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  });
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
 
   const navItems = [
     { path: "/profile", label: "Profile", icon: User },
@@ -103,6 +118,28 @@ export const Sidebar = ({ collapsed, setCollapsed }: SidebarProps) => {
             );
           })}
         </ul>
+
+        {/* Theme Toggle */}
+        <div className="mt-6 pt-4 border-t border-sidebar-border">
+          <button
+            onClick={() => setIsDark(!isDark)}
+            className={cn(
+              "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 w-full",
+              "hover:bg-sidebar-accent text-sidebar-foreground",
+              collapsed && "justify-center"
+            )}
+            aria-label="Toggle theme"
+          >
+            {isDark ? (
+              <Sun className="w-5 h-5 flex-shrink-0" />
+            ) : (
+              <Moon className="w-5 h-5 flex-shrink-0" />
+            )}
+            {!collapsed && (
+              <span className="font-medium">{isDark ? "Light Mode" : "Dark Mode"}</span>
+            )}
+          </button>
+        </div>
       </nav>
 
       {/* Footer */}
