@@ -149,7 +149,7 @@ const Journal = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex flex-col md:flex-row h-[calc(100vh-220px)] overflow-hidden gap-4 px-4 pb-2">
+      <div className="flex flex-col md:flex-row h-[calc(100vh-160px)] overflow-hidden gap-4 px-4 py-4">
         {/* Journal List */}
         <div
           className={`
@@ -193,7 +193,7 @@ const Journal = () => {
               flex-1 bg-card rounded-xl shadow-lg overflow-y-auto
               [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]
               animate-fade-in
-              py-5
+              py-4
             `}
           >
             <div className="px-8 max-w-3xl mx-auto">
