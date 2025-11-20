@@ -131,9 +131,9 @@ export const Sidebar = ({ collapsed, setCollapsed }: SidebarProps) => {
             aria-label="Toggle theme"
           >
             {isDark ? (
-              <Sun className="w-5 h-5 flex-shrink-0" />
-            ) : (
               <Moon className="w-5 h-5 flex-shrink-0" />
+            ) : (
+              <Sun className="w-5 h-5 flex-shrink-0" />
             )}
             {!collapsed && (
               <span className="font-medium">{isDark ? "Dark Mode" : "Light Mode"}</span>
