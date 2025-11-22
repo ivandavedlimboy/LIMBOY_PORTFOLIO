@@ -21,35 +21,38 @@ export const PersonalInfo = () => {
 
   return (
     <div className="animate-fade-in p-4 sm:p-6 lg:p-8">
-      <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-        {/* Personal Details */}
-        <div className="bg-card rounded-lg p-4 sm:p-6 shadow-sm border border-border">
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Personal Details</h2>
-          <dl className="space-y-4">
-            {personalDetails.map((detail) => (
-              <div key={detail.label} className="flex flex-col">
-                <dt className="text-sm font-medium text-muted-foreground mb-1">
-                  {detail.label}
-                </dt>
-                <dd className="text-base text-foreground">{detail.value}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+      {/* Inner container with border */}
+      <div className="border border-border rounded-lg p-0 overflow-hidden">
+        <div className="flex flex-col md:flex-row">
+          {/* Personal Details - Left Side */}
+          <div className="md:w-1/2 bg-card rounded-lg p-4 sm:p-6 shadow-lg border border-border">
+            <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Personal Details</h2>
+            <dl className="space-y-4">
+              {personalDetails.map((detail) => (
+                <div key={detail.label} className="flex flex-col">
+                  <dt className="text-sm font-medium text-muted-foreground mb-1">
+                    {detail.label}
+                  </dt>
+                  <dd className="text-base text-foreground">{detail.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
 
-        {/* Traits & Characteristics */}
-        <div className="bg-portfolio-warm-light rounded-lg p-4 sm:p-6 shadow-sm border border-border">
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Traits & Characteristics</h2>
-          <div className="flex flex-wrap gap-3">
-            {traits.map((trait, index) => (
-              <span
-                key={trait}
-                className="px-4 py-2 bg-card rounded-full text-sm font-medium text-foreground border border-border hover:bg-accent hover:text-accent-foreground transition-colors duration-200 animate-scale-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                {trait}
-              </span>
-            ))}
+          {/* Traits & Characteristics - Right Side */}
+          <div className="md:w-1/2 bg-portfolio-warm-light p-4 sm:p-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Traits & Characteristics</h2>
+            <div className="flex flex-wrap gap-3">
+              {traits.map((trait, index) => (
+                <span
+                  key={trait}
+                  className="px-4 py-2 bg-card rounded-full text-sm font-medium text-foreground border border-border hover:bg-accent hover:text-accent-foreground transition-colors duration-200 animate-scale-in"
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  {trait}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
