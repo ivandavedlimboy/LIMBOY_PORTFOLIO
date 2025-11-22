@@ -37,11 +37,12 @@ export const Education = () => {
         {/* Education Timeline */}
         <div className="bg-card rounded-lg p-4 sm:p-6 shadow-sm border border-border">
           <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Education</h2>
-          <div className="space-y-0">
+          <div className="relative">
+            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary/30"></div>
             {educationTimeline.map((edu, index) => (
               <div key={edu.level}>
                 <div
-                  className="relative pl-8 py-4 border-l-2 border-primary/30 animate-slide-in-left"
+                  className="relative pl-8 py-4 animate-slide-in-left"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div>
@@ -54,8 +55,8 @@ export const Education = () => {
                   </div>
                 </div>
                 {index < educationTimeline.length - 1 && (
-                  <div className="relative pl-8 border-l-2 border-primary/30">
-                    <div className="absolute -left-[9px] w-4 h-4 rounded-full bg-primary border-2 border-background shadow-sm"></div>
+                  <div className="relative pl-8">
+                    <div className="absolute -left-[7px] w-3.5 h-3.5 rounded-full bg-primary border-2 border-background shadow-sm"></div>
                   </div>
                 )}
               </div>
