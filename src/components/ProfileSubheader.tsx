@@ -5,7 +5,7 @@ const tabs = [
   { id: "personal", label: "Personal Info" },
   { id: "contact", label: "Contact Me" },
   { id: "education", label: "Education" },
-  { id: "awards", label: "Awards" },
+  { id: "awards", label: "Achievements" },
   { id: "experience", label: "Experience" },
   { id: "certifications", label: "Certifications" },
 ];
