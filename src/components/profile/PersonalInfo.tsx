@@ -22,7 +22,7 @@ export const PersonalInfo = () => {
   return (
     <div className="animate-fade-in p-4 sm:p-6 lg:p-8">
       {/* Inner container with border */}
-      <div className="border border-border rounded-lg p-0 overflow-hidden">
+      <div className="border border-border rounded-lg p-0 overflow-hidden bg-portfolio-warm-light">
         <div className="flex flex-col md:flex-row">
           {/* Personal Details - Left Side */}
           <div className="md:w-1/2 bg-card rounded-lg p-4 sm:p-6 shadow-lg border border-border">
@@ -40,7 +40,7 @@ export const PersonalInfo = () => {
           </div>
 
           {/* Traits & Characteristics - Right Side */}
-          <div className="md:w-1/2 bg-portfolio-warm-light p-4 sm:p-6">
+          <div className="md:w-1/2 bg-transparent p-4 sm:p-6">
             <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Traits & Characteristics</h2>
             <div className="flex flex-wrap gap-3">
               {traits.map((trait, index) => (
