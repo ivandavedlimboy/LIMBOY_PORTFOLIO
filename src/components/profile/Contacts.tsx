@@ -63,8 +63,8 @@ export const Contacts = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg bg-secondary ${contact.color} transition-transform duration-200 group-hover:scale-110`}>
-                    <Icon className="w-6 h-6" />
+                <div className="p-3 rounded-full bg-secondary text-primary transition-transform duration-200 group-hover:scale-110">
+                  <Icon className="w-6 h-6" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-foreground mb-1">{contact.label}</h3>
