@@ -35,7 +35,7 @@ export const Education = () => {
     <div className="animate-fade-in p-4 sm:p-6 lg:p-8">
       <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
         {/* Education Timeline */}
-        <div className="bg-card rounded-lg p-4 sm:p-6 shadow-sm border border-border">
+        <div className="bg-card rounded-lg p-4 sm:p-6 shadow-sm">
           <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Education</h2>
           <div className="relative">
             <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary/30"></div>
@@ -45,7 +45,7 @@ export const Education = () => {
                 className="relative pl-8 py-4 animate-slide-in-left"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="absolute -left-[7px] top-6 w-3.5 h-3.5 rounded-full bg-primary border-2 border-background shadow-sm"></div>
+                <div className="absolute -left-[7px] top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-primary shadow-sm"></div>
                 <div>
                   <h3 className="font-bold text-foreground text-lg">{edu.level}</h3>
                   <p className="text-muted-foreground font-medium">{edu.school}</p>
