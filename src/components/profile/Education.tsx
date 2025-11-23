@@ -40,25 +40,20 @@ export const Education = () => {
           <div className="relative">
             <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary/30"></div>
             {educationTimeline.map((edu, index) => (
-              <div key={edu.level}>
-                <div
-                  className="relative pl-8 py-4 animate-slide-in-left"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div>
-                    <h3 className="font-bold text-foreground text-lg">{edu.level}</h3>
-                    <p className="text-muted-foreground font-medium">{edu.school}</p>
-                    {edu.degree && (
-                      <p className="text-sm text-muted-foreground italic mt-1">{edu.degree}</p>
-                    )}
-                    <p className="text-sm text-primary mt-1">{edu.years}</p>
-                  </div>
+              <div
+                key={edu.level}
+                className="relative pl-8 py-4 animate-slide-in-left"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="absolute -left-[7px] top-6 w-3.5 h-3.5 rounded-full bg-primary border-2 border-background shadow-sm"></div>
+                <div>
+                  <h3 className="font-bold text-foreground text-lg">{edu.level}</h3>
+                  <p className="text-muted-foreground font-medium">{edu.school}</p>
+                  {edu.degree && (
+                    <p className="text-sm text-muted-foreground italic mt-1">{edu.degree}</p>
+                  )}
+                  <p className="text-sm text-primary mt-1">{edu.years}</p>
                 </div>
-                {index < educationTimeline.length - 1 && (
-                  <div className="relative pl-8">
-                    <div className="absolute -left-[7px] w-3.5 h-3.5 rounded-full bg-primary border-2 border-background shadow-sm"></div>
-                  </div>
-                )}
               </div>
             ))}
           </div>
